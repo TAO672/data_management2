@@ -7,13 +7,33 @@ This project analyzes flight delay and cancellation data from 2006 using Apache 
 
 ---
 
+
 ## 📁 Project Structure
+📦 Airline Delay Analysis
 
-- `Untitled8.ipynb` – Main Jupyter Notebook with full analysis and visualizations
-- Hive queries – Executed in Beeline shell for data extraction and aggregation
-- `.csv` files – Intermediate outputs from Hive for use in pandas/Matplotlib
+├── Untitled8.ipynb         # Main analysis notebook
 
----
+├── data/
+
+│   ├── timeofday delay.csv
+
+│   ├── dayofweek delay.csv
+
+│   ├── month delay.csv
+
+│   ├── delay_factors.csv
+
+│   ├── top_delayed_routes.csv
+
+│   ├── top_cancelled_routes.csv
+
+│   ├── top_delayed_flightnums.csv
+
+│   └── top_delayed_airlines.csv
+
+
+└── README.md
+
 
 ## 📊 Key Analyses
 
@@ -43,3 +63,48 @@ This project analyzes flight delay and cancellation data from 2006 using Apache 
 - Required Python packages:
   ```bash
   pip install pandas matplotlib pyhive sasl thrift_sasl
+
+
+
+
+## 📊 Analysis Module Overview
+
+1. Distribution of delay time
+During the day: flights are most reliable in the morning, and are most likely to be delayed at night
+
+During the week: Mondays and Fridays are significantly delayed
+
+During the year: July and December are the most prone to delays, possibly due to holidays/weather
+
+2. Proportion of delay reasons
+**NAS system (41.3%)** is the biggest culprit, followed by late arrival of aircraft and weather
+
+It is recommended to improve the efficiency of air traffic control and aircraft allocation
+
+3. Analysis of cancellation reasons
+**Class A (airline responsibility)** is the most
+
+It is recommended to strengthen planning capabilities and reduce the risk of human cancellations
+
+4. Problem routes and flights
+Identify 10 routes with the most serious delays or cancellations
+
+Flight numbers such as 9506, 7028, and 7425 have extremely low on-time rates
+
+Airlines EV, YV, and TZ rank high in delay time
+
+## 📈 Visualization highlights
+Bar chart: various types of delays, problematic flights, airlines
+Line chart: average delays by week and month
+Pie chart: delay causes
+  
+## 📌 Summary and suggestions
+This project uses Hive SQL and Python visualization tools to systematically analyze flight data in 2006. Key findings:
+
+Early flights have fewer delays and can be given priority
+
+NAS systems and airlines have more delays
+
+Specific routes and flights should be monitored
+
+It is recommended to optimize the planning and deployment mechanism to improve flight stability
