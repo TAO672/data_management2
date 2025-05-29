@@ -1,35 +1,45 @@
 # data_management2
 ![image](https://github.com/user-attachments/assets/dafcbf44-3165-4a38-b66e-070c3d4a1289)
 
-## 🧭 Project Introduction
-
 # ✈️ Airline Delay and Cancellation Analysis (2006)
 
-This project is based on the US flight data from 2006 and analyzes flight delays and cancellations from multiple dimensions.
+This project analyzes flight delay and cancellation data from 2006 using Apache Hive and Jupyter Notebook. It aims to explore temporal patterns, identify major causes of delays, and highlight problematic flights and routes.
 
-Analysis objectives include:
+---
 
-1. Analyze the time distribution of flight delays in a day, week distribution and month distribution
+## 📁 Project Structure
 
-2. Identify the main factors causing delays and calculate their proportions
+- `Untitled8.ipynb` – Main Jupyter Notebook with full analysis and visualizations
+- Hive queries – Executed in Beeline shell for data extraction and aggregation
+- `.csv` files – Intermediate outputs from Hive for use in pandas/Matplotlib
 
-3. Analyze the main reasons for flight cancellations and related airlines, airports, and time periods
+---
 
-4. Find the routes, flight numbers and airlines with the most serious delays or cancellations
+## 📊 Key Analyses
 
-The charts are based on CSV files exported from Hive query results, and are visualized using Python and Matplotlib.
+### 1. Delay Pattern Analysis
+- **By time of day**: Morning flights show the least delay; evening flights the most.
+- **By day of week**: Monday and Friday tend to experience higher average delays.
+- **By month**: July and December are peak delay months, possibly due to holidays and weather.
 
+### 2. Delay Factor Analysis
+- **NAS-related delays** were the largest contributor (41.3%), followed by late aircraft and weather.
 
-# --------------------------------------------
-# 🛫 Airline Delay and Cancellation Analysis (2006)
-# --------------------------------------------
+### 3. Cancellation Analysis
+- **Type A** (airline-related) cancellations occurred most frequently.
+- Recommendations include improving scheduling and staff planning.
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import warnings
-import logging
-import matplotlib
+### 4. Problematic Routes & Carriers
+- Identified top 10 routes with highest average delays and cancellation counts.
+- Flights with specific numbers (e.g., 9506, 7425) had consistently poor on-time performance.
 
+---
 
-warnings.filterwarnings("ignore")
-logging.getLogger('matplotlib.font_manager').disabled = True
+## 🛠️ Environment & Setup
+
+- Python 3.x
+- Jupyter Notebook
+- Hive 2.6+ (on HDP Sandbox or similar)
+- Required Python packages:
+  ```bash
+  pip install pandas matplotlib pyhive sasl thrift_sasl
