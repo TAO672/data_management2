@@ -3,7 +3,11 @@
 
 # ✈️ Airline Delay and Cancellation Analysis (2006)
 
-This project analyzes flight delay and cancellation data from 2006 using Apache Hive and Jupyter Notebook. It aims to explore temporal patterns, identify major causes of delays, and highlight problematic flights and routes.
+This project analyzes U.S. domestic airline flight delay and cancellation data from the year 2006. By combining Apache Hive for large-scale SQL-based queries and Jupyter Notebook for data visualization, the project explores temporal delay patterns, major causes of delays and cancellations, and identifies the most problematic flight routes and carriers.
+
+The data is sourced from the Hive table flights_2006, preloaded in the HDP Sandbox environment. It contains millions of flight records with detailed information on scheduled time, delays, cancellations, and reasons.
+
+
 
 ---
 
@@ -11,7 +15,7 @@ This project analyzes flight delay and cancellation data from 2006 using Apache 
 ## 📁 Project Structure
 📦 Airline Delay Analysis
 
-├── Untitled8.ipynb         # Main analysis notebook
+├── task2.ipynb         # Main analysis notebook
 
 ├── data/
 
