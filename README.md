@@ -70,6 +70,14 @@ The data is sourced from the Hive table flights_2006, preloaded in the HDP Sandb
 
 
 
+## 📊 Visualization Highlights
+
+- **Bar charts**: Delay types, routes, flight numbers, and airlines
+- **Line charts**: Delays by day of week and by month
+- **Pie chart**: Breakdown of delay factors by percentage
+- **Hive SQL results**: Used as core data source for grouped summaries
+
+
 
 ## 📊 Analysis Module Overview
 
